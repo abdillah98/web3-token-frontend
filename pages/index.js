@@ -38,7 +38,7 @@ export default function Home() {
             'padding': '50px 20px'
         }}>
 
-            {!isLoadingBalanceOf ?            
+            {!isLoadingBalanceOf || isLoadingSymbol ?            
                 <>
 
                    <CardBalanceOf 
