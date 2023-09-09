@@ -54,6 +54,7 @@ export default function Home() {
                         symbol={symbol}
                    />
 
+                    <h3 style={{'lineHeight': '0.6'}}>Transfer Token</h3>
                     <form style={{
                         'display': 'flex',
                         'flexDirection': 'column',
