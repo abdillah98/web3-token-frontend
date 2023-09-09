@@ -12,11 +12,12 @@ export default function Home() {
 
     // Thirdweb Hooks
     const account = useAddress()
-    const { contract } = useContract("Your contract address here...");
+    const { contract } = useContract("Your contract address ...");
     const { data: balanceOf, isLoading: isLoadingBalanceOf } = useContractRead(contract, "balanceOf", [account])
     const { data: symbol, isLoading: isLoadingSymbol } = useContractRead(contract, "symbol")
     const { mutateAsync: transfer, isLoading: isLoadingTransfer } = useContractWrite(contract, "transfer")
 
+    console.log(contract)
     // transfer token
     const transferToken = async (e) => {
         e.preventDefault();
@@ -38,7 +39,7 @@ export default function Home() {
             'padding': '50px 20px'
         }}>
 
-            {!isLoadingBalanceOf || isLoadingSymbol ?            
+            {!isLoadingBalanceOf || !isLoadingSymbol ?            
                 <>
 
                    <CardBalanceOf 
