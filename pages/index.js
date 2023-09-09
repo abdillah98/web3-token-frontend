@@ -12,7 +12,7 @@ export default function Home() {
 
     // Thirdweb Hooks
     const account = useAddress()
-    const { contract } = useContract("0x9285BBF371F772CA82638FcD22D93Dd59818F8C4");
+    const { contract } = useContract("Your contract address here...");
     const { data: balanceOf, isLoading: isLoadingBalanceOf } = useContractRead(contract, "balanceOf", [account])
     const { data: symbol, isLoading: isLoadingSymbol } = useContractRead(contract, "symbol")
     const { mutateAsync: transfer, isLoading: isLoadingTransfer } = useContractWrite(contract, "transfer")
@@ -21,15 +21,7 @@ export default function Home() {
     const transferToken = async (e) => {
         e.preventDefault();
 
-        try {
-            const _amount = ethers.utils.parseUnits(amount.toString(),"ether");
-            const tx = await transfer({ args: [to, _amount]});
-
-            console.info("contract call successs", tx);
-        } 
-        catch (err) {
-            console.error("contract call failure", err);
-        }
+        // transfer code here...
     }
 
 
